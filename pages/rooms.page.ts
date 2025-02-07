@@ -79,7 +79,6 @@ export class RoomsPage extends BasePage {
     }
 
     async getLatestRoomBooking() {
-        //i don't like using sleeps but the page doesn't seem to load fast enough
         await this.page.waitForTimeout(500);
         const rowCount = await this.roomRows.count();
         const lastRow = this.roomRows.nth(rowCount - 1);

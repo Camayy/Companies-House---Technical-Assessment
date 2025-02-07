@@ -28,7 +28,6 @@ test.describe('Home page functional tests', () => {
 
   });
 
-  //I could not get the dragging method to work on the calendar but have what i wrote so far (i really want to know where i went wrong)
   test.skip('Book a room for one night, checking in today', async ({ page }) => {
     
     const homePage = new HomePage(page);
@@ -74,7 +73,6 @@ test.describe('Home page validation tests', () => {
 
     await homePage.clickSubmitContactButton();
 
-    // Ensure all required fields show a validation error
     const validationErrorBox = await homePage.getValidationErrorBoxText();
 
     const expectedErrors = [

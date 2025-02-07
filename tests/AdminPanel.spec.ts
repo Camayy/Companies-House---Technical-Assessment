@@ -90,12 +90,12 @@ test.describe('Admin panel functional tests', () => {
     expect(await messagesPage.hasMessageBeenRecievedFromUser(name, subject)).toBe(true);
   });
 
-  test.skip('Booking a room via the admin panel', async ({ page }) => {
+  test('Booking a room via the admin panel', async ({ page }) => {
     const adminPage = new AdminPage(page);
     const reportPage = new ReportPage(page);
 
     await adminPage.navigateTo('/#/admin/report');
-    adminPage.loginAsAdmin();
+    await adminPage.loginAsAdmin();
 
     await reportPage.setBookingDates(14, 17);
     await reportPage.fillBookingModal("test", "name", "666", true);
